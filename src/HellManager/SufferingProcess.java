@@ -7,10 +7,16 @@ import java.util.Date;
  */
 public class SufferingProcess {
     private Date startDate;
-    private Date finishDate; // optional
+    private Date finishDate;
     private TortureDepartment tortureDepartment;
     private Sinner sinner;
 
+    public SufferingProcess(Date startDate, Date finishDate, TortureDepartment tortureDepartment, Sinner sinner) {
+        setStartDate(startDate);
+        setFinishDate(finishDate);
+        setTortureDepartment(tortureDepartment);
+        setSinner(sinner);
+    }
 
     public Date getStartDate() {
         return startDate;

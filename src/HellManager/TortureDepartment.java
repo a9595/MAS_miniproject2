@@ -1,9 +1,6 @@
 package HellManager;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by tieorange on 21/04/16.
@@ -12,12 +9,13 @@ public class TortureDepartment {
     private String name;
     private Set<SufferingProcess> sufferingProcesses = new HashSet<>(); // with an attribute
     private Map<String, Torturer> torturersMap = new HashMap<>(); // qualified
+    private List<PunishmentTool> punishmentTools = new ArrayList<>();
 
     public TortureDepartment(String name) {
         setName(name);
     }
 
-    public Torturer getTorturer(String id) {
+    public Torturer getTorturerById(String id) {
         if (id != null) {
             return torturersMap.get(id);
         } else {
@@ -31,14 +29,15 @@ public class TortureDepartment {
         } else {
             if (!torturersMap.containsKey(newTorturer.getId())) {
                 torturersMap.put(newTorturer.getId(), newTorturer);
-                newTorturer.setTortureDepartment(this);
+                if (newTorturer.getTortureDepartment() != this) // check if already setted
+                    newTorturer.setTortureDepartment(this);
             } else {
                 throw new RuntimeException("Torturer is already in this TortureDepartment");
             }
         }
     }
 
-    public void removeTorturer(String id) {
+    public void removeTorturerById(String id) {
         if (id == null) {
             throw new IllegalArgumentException("id is NULL");
         } else {
@@ -73,4 +72,31 @@ public class TortureDepartment {
             this.name = name;
         }
     }
+
+    // punishment tools:
+    public List<PunishmentTool> getPunishmentTools() {
+        return new ArrayList<>(punishmentTools);
+    }
+
+    public void addPunishmentTool(PunishmentTool punishmentTool) {
+        if (punishmentTool != null) {
+            if (!punishmentTools.contains(punishmentTool)) {
+                punishmentTools.add(punishmentTool);
+                punishmentTool.setTortureDepartment(this);
+            } else {
+                throw new IllegalArgumentException("this punishmentTool is already added");
+            }
+        } else {
+            throw new IllegalArgumentException("punishmentTool is NULL");
+        }
+    }
+
+    public void removePunishmentTool(PunishmentTool punishmentTool) {
+        if (punishmentTools.contains(punishmentTool)) {
+            punishmentTools.remove(punishmentTool);
+            punishmentTool.setTortureDepartment(null);
+        }
+
+    }
+
 }

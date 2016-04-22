@@ -9,12 +9,13 @@ public class Torturer {
     private String id; // Qualified
     private TortureDepartment tortureDepartment;
     private String name;
+    private HellPet hellPet;
 
     public Torturer(String name, TortureDepartment tortureDepartment) {
-        setTortureDepartment(tortureDepartment);
         setName(name);
         UUID uuid = UUID.randomUUID();
         setId(uuid.toString());
+        setTortureDepartment(tortureDepartment);
     }
 
     public TortureDepartment getTortureDepartment() {
@@ -51,6 +52,24 @@ public class Torturer {
             throw new IllegalArgumentException("name is NULL");
         } else {
             this.name = name;
+        }
+    }
+
+    public HellPet getHellPet() {
+        return hellPet;
+    }
+
+    public void setHellPet(HellPet hellPet) {
+        if (hellPet != null) {
+            if (this.hellPet != hellPet) {
+                if (this.hellPet == null)
+                    this.hellPet.setTorturer(null);
+                this.hellPet = hellPet;
+                hellPet.setTorturer(this);
+            }
+
+        } else {
+            throw new IllegalArgumentException("hellPet is NULL");
         }
     }
 }
