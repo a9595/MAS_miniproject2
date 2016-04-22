@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class Sinner {
     private Set<Sin> sinsSet = new HashSet<>(); // Composition
-    private SufferingProcess sufferingProcess; // with attribute
+    private SufferingProcess sufferingProcess; // with attribute // TODO: List<SufferingProcess>
     private String firstName;
     private String lastName;
     private DateTime birthDate;
@@ -39,6 +39,7 @@ public class Sinner {
         } else {
             throw new IllegalArgumentException("Name should not be null");
         }
+//        for(Iterator<Sin> sin = sinsSet.iterator() : sin. ){
     }
     //endregion
 
@@ -64,6 +65,8 @@ public class Sinner {
             throw new IllegalArgumentException("SufferingProcess sinner is different");
         } else {
             this.sufferingProcess = sufferingProcess;
+            if (sufferingProcess.getSinner() != this)
+                sufferingProcess.setSinner(this);
         }
     }
 

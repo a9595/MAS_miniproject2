@@ -12,13 +12,15 @@ public class Main {
 
         TortureDepartment tortureDepartment = new TortureDepartment("Boiling in hot water");
         Torturer torturer = new Torturer(person.username(), tortureDepartment);
-        HellPet hellPet = new HellPet("Devil rabbit", HellPetColor.GREEN, torturer);
         PunishmentTool punishmentTool = new PunishmentTool("Boiling pot", 67, tortureDepartment);
 
         Sinner sinner = new Sinner(person.firstName(), person.lastName(), person.dateOfBirth());
         sinner.addSin("Killing");
         sinner.addSin("Pride");
         sinner.addSin("Greed");
+
+        sinner.removeSin("Pride");
+        int size = sinner.getSinsNames().size();
 
         SufferingProcess sufferingProcess = new SufferingProcess(new Date(), new Date(), tortureDepartment, sinner);
 

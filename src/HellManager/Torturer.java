@@ -62,7 +62,7 @@ public class Torturer {
     public void setHellPet(HellPet hellPet) {
         if (hellPet != null) {
             if (this.hellPet != hellPet) {
-                if (this.hellPet == null)
+                if (this.hellPet != null)
                     this.hellPet.setTorturer(null);
                 this.hellPet = hellPet;
                 hellPet.setTorturer(this);
