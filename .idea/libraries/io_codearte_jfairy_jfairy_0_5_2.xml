@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="io.codearte.jfairy:jfairy:0.5.2" type="repository">
+    <properties maven-id="io.codearte.jfairy:jfairy:0.5.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jfairy-0.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guava-16.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/snakeyaml-1.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/iban4j-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guice-4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/joda-time-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guice-assistedinject-4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist-3.18.2-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/annotations-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-lang3-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

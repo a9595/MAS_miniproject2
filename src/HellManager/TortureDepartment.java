@@ -13,6 +13,10 @@ public class TortureDepartment {
     private Set<SufferingProcess> sufferingProcesses = new HashSet<>(); // with an attribute
     private Map<String, Torturer> torturersMap = new HashMap<>(); // qualified
 
+    public TortureDepartment(String name) {
+        setName(name);
+    }
+
     public Torturer getTorturer(String id) {
         if (id != null) {
             return torturersMap.get(id);
@@ -55,6 +59,18 @@ public class TortureDepartment {
             sufferingProcesses.add(sufferingProcess);
         } else {
             throw new IllegalArgumentException("This SufferingProcess is already added");
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("name is NULL");
+        } else {
+            this.name = name;
         }
     }
 }
